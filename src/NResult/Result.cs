@@ -23,7 +23,6 @@ namespace NResult
         }
 
         public static implicit operator Result<T, E>(Result<Nothing, E> resultErr) => new Result<T, E>(resultErr.Err);
-
         public static implicit operator Result<T, E>(Result<T, Nothing> resultOK) => new Result<T, E>(resultOK.Value);
     }
 
@@ -49,9 +48,11 @@ namespace NResult
 
         public static implicit operator Result<T>(Result<Nothing, Exception> resultErr) => new Result<T>(resultErr.Err);
         public static implicit operator Result<T>(Result<T, Nothing> resultOK) => new Result<T>(resultOK.Value);
+
+        public static implicit operator Result<T>(Result<T, Exception> res) => new Result<T>(res.Value);
     }
 
-    public class Result : IResult
+    public partial class Result : IResult
     {
         public bool IsOK { get; }
         public Nothing Value { get; }
@@ -71,14 +72,5 @@ namespace NResult
 
         public static implicit operator Result(Result<Nothing, Exception> resultErr) => new Result(resultErr.Err);
 
-        // these methods are common for the all Result classes
-        // because it's much better to use something like: Result.Fail("wrong");
-        // instead of: Result<int>.Fail("wrong");
-
-        public static Result<Nothing, Exception> Error(Exception err) => new Result<Nothing, Exception>(err);
-        public static Result<Nothing, E> Fail<E>(E err) => new Result<Nothing, E>(err);
-
-        public static Result<T, Nothing> OK<T>(T value) => new Result<T, Nothing>(value);
-        public static Result OK() => new Result();
     }
 }

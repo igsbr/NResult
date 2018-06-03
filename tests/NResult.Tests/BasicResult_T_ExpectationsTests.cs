@@ -47,5 +47,15 @@ namespace NResult.Tests
             Assert.IsAssignableFrom<ValidationError>(sut.Err);
         }
 
+        [Fact]
+        public void CorrectImpliciteConversionFromResult_T_Exception()
+        {
+            var sut = new Result<int, Exception>(42);
+            Result<int> actual = sut;
+
+            Assert.True(sut.IsOK);
+            Assert.Equal(42, actual.Value);
+        }
+
     }
 }

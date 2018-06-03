@@ -74,3 +74,28 @@ Assert.Equal(42, Value);
 Assert.Equal(42, Value);
 Assert.IsAssignableFrom<ValidationError>(Err);
 ```
+Also you can use query expression syntax (something like "do" notaition in Haskell):
+```
+    var foo = 42;
+    var bar = 17;
+
+    var fooBar = from i in ValidateCount(foo)
+                 let k = i * 2
+                 from j in ValidateCount(bar)
+                 select k + j;
+
+    Assert.True(fooBar.IsOK);
+    Assert.Equal(101, fooBar.Value);
+```
+```
+    var foo = 42;
+    var bar = -17; // negative
+
+    fooBar = from i in ValidateCount(foo)
+             let k = i * 2
+             from j in ValidateCount(bar)
+             select k + j;
+
+    Assert.False(fooBar.IsOK);
+    Assert.IsAssignableFrom<ValidationError>(fooBar.Err);
+```
