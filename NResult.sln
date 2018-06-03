@@ -5,7 +5,23 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{03AA5F15-3595-467C-9D0E-E806AC7097F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NResult", "src\NResult\NResult.csproj", "{1AACAE62-B919-4293-8483-E0B8599BE95A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NResult", "src\NResult\NResult.csproj", "{1AACAE62-B919-4293-8483-E0B8599BE95A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BEC5A444-F4A0-421C-94B3-C8517FC0CC73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NResult.Tests", "tests\NResult.Tests\NResult.Tests.csproj", "{CD41CDEE-FDCD-4E93-93AC-6FF111F412EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{5A33F9A9-793C-4AFE-A910-ECE013EE96B9}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\dotnet build.ps1 = scripts\dotnet build.ps1
+		scripts\dotnet pack.ps1 = scripts\dotnet pack.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{82BFC561-6B93-4F6F-A2FC-D9D50168F7D6}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +31,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{1AACAE62-B919-4293-8483-E0B8599BE95A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -32,8 +45,27 @@ Global
 		{1AACAE62-B919-4293-8483-E0B8599BE95A}.Release|x64.Build.0 = Release|Any CPU
 		{1AACAE62-B919-4293-8483-E0B8599BE95A}.Release|x86.ActiveCfg = Release|Any CPU
 		{1AACAE62-B919-4293-8483-E0B8599BE95A}.Release|x86.Build.0 = Release|Any CPU
+		{CD41CDEE-FDCD-4E93-93AC-6FF111F412EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD41CDEE-FDCD-4E93-93AC-6FF111F412EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD41CDEE-FDCD-4E93-93AC-6FF111F412EA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CD41CDEE-FDCD-4E93-93AC-6FF111F412EA}.Debug|x64.Build.0 = Debug|Any CPU
+		{CD41CDEE-FDCD-4E93-93AC-6FF111F412EA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CD41CDEE-FDCD-4E93-93AC-6FF111F412EA}.Debug|x86.Build.0 = Debug|Any CPU
+		{CD41CDEE-FDCD-4E93-93AC-6FF111F412EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD41CDEE-FDCD-4E93-93AC-6FF111F412EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD41CDEE-FDCD-4E93-93AC-6FF111F412EA}.Release|x64.ActiveCfg = Release|Any CPU
+		{CD41CDEE-FDCD-4E93-93AC-6FF111F412EA}.Release|x64.Build.0 = Release|Any CPU
+		{CD41CDEE-FDCD-4E93-93AC-6FF111F412EA}.Release|x86.ActiveCfg = Release|Any CPU
+		{CD41CDEE-FDCD-4E93-93AC-6FF111F412EA}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1AACAE62-B919-4293-8483-E0B8599BE95A} = {03AA5F15-3595-467C-9D0E-E806AC7097F0}
+		{CD41CDEE-FDCD-4E93-93AC-6FF111F412EA} = {BEC5A444-F4A0-421C-94B3-C8517FC0CC73}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64569801-DCB5-4DD8-84EB-2F7FD3913868}
 	EndGlobalSection
 EndGlobal
