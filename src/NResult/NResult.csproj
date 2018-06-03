@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <LangVersion>7.3</LangVersion>
+
+    <IsPackable>true</IsPackable>
+    <Version>2.0.0-alpha</Version>
+    <Authors>Igor Logvinov</Authors>
+    <Description>C# implementation of a well known Result&lt;T,E&gt; pattern.</Description>
+    <PackageLicenseUrl>https://github.com/igsbr/Results/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/igsbr/Results</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/igsbr/Results</RepositoryUrl>
+    <PackageTags>c# .net</PackageTags>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+  </PropertyGroup>
+
+</Project>
