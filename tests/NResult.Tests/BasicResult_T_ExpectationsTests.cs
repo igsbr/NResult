@@ -7,8 +7,6 @@ namespace NResult.Tests
 {
     public class BasicResult_T_ExpectationsTests
     {
-        class ValidationError : Exception { }
-
         private Result<int> IsPositive(int i)
         {
             if (i > 0)
@@ -17,7 +15,7 @@ namespace NResult.Tests
             }
             else
             {
-                return Error(new ValidationError());
+                return Error(new SomeUsefulException());
             }
         }
 
@@ -45,7 +43,7 @@ namespace NResult.Tests
             var sut = IsPositive(-1);
 
             Assert.False(sut.IsOK);
-            Assert.IsAssignableFrom<ValidationError>(sut.Err);
+            Assert.IsAssignableFrom<SomeUsefulException>(sut.Err);
         }
 
         [Fact]

@@ -5,8 +5,6 @@ namespace NResult.Tests
 {
     public class ResultStaticCreationMethodsTests
     {
-        class ValidationError : Exception { }
-
         [Fact]
         public void CreatedResultUsing_Ok_WithArgIsCorrect()
         {
@@ -42,23 +40,23 @@ namespace NResult.Tests
         [Fact]
         public void CreatedResultUsing_Error_IsCorrect()
         {
-            var sut = Result.Error(new ValidationError());
+            var sut = Result.Error(new SomeUsefulException());
 
             Assert.IsAssignableFrom<IResult<Nothing, Exception>>(sut);
 
             Assert.False(sut.IsOK);
-            Assert.IsAssignableFrom<ValidationError>(sut.Err);
+            Assert.IsAssignableFrom<SomeUsefulException>(sut.Err);
         }
 
         [Fact]
         public void CreatedResultUsing_AsError_IsCorrect()
         {
-            var sut = (new ValidationError()).AsError();
+            var sut = (new SomeUsefulException()).AsError();
 
             Assert.IsAssignableFrom<IResult<Nothing, Exception>>(sut);
 
             Assert.False(sut.IsOK);
-            Assert.IsAssignableFrom<ValidationError>(sut.Err);
+            Assert.IsAssignableFrom<SomeUsefulException>(sut.Err);
         }
 
         [Fact]
