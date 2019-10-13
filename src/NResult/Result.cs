@@ -33,9 +33,9 @@ namespace NResult
 
             if (this.IsOK && other.IsOK)
             {
-                if (this.Value == default)
+                if (this.Value.Equals(default))
                 {
-                    return other.Value == default;
+                    return other.Value.Equals(default);
                 }
                 else
                 {
@@ -44,9 +44,9 @@ namespace NResult
             }
             else if (!this.IsOK && !other.IsOK)
             {
-                if (this.Err == default)
+                if (this.Err.Equals(default))
                 {
-                    return other.Err == default;
+                    return other.Err.Equals(default);
                 }
                 else
                 {
@@ -114,11 +114,11 @@ namespace NResult
         {
             if (other is null) return false;
 
-            if (this.IsOK && other.IsOK) 
+            if (this.IsOK && other.IsOK)
             {
-                if (this.Value == default)
+                if (this.Value.Equals(default))
                 {
-                    return other.Value == default;
+                    return other.Value.Equals(default);
                 }
                 else
                 {
